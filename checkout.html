@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Produto | STYLENEST</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .produto-detalhe {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 40px;
+    }
+
+    /* Galeria de imagens */
+    .galeria {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .galeria img.principal {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .thumbnails img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .thumbnails img:hover {
+      border-color: #111;
+    }
+
+    /* Detalhes */
+    .detalhes {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .detalhes h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .detalhes .preco {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .tamanhos-grid {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .size-btn {
+      padding: 10px 18px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .size-btn:hover {
+      border-color: #111;
+    }
+
+    .size-btn.selected {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .size-btn.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .acoes {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .acoes button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #btn-add-cart {
+      background: #fff;
+      border: 2px solid #111;
+      color: #111;
+    }
+
+    #btn-add-cart:hover {
+      background: #f5f5f5;
+    }
+
+    #btn-comprar-agora {
+      background: #111;
+      color: #fff;
+    }
+
+    #btn-comprar-agora:hover {
+      background: #333;
+    }
+
+    .avaliacoes {
+      margin-top: 40px;
+    }
+
+    .avaliacoes h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .avaliacoes .estrela {
+      color: gold;
+    }
+
+    .avaliacoes .comentario {
+      margin: 10px 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .produto-detalhe {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>STYLENEST</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="mulher.html">Mulher</a>
+      <a href="homem.html">Homem</a>
+      <a href="kids.html">Kids</a>
+    </nav>
+  </header>
+
+  <main class="produto-detalhe">
+    <!-- Galeria -->
+    <div class="galeria">
+      <img id="imagem-principal" class="principal" src="https://static.netshoes.com.br/produtos/camisa-nike-corinthians-ii-2024-25-torcedor-pro-masculina/28/2IC-9329-028/2IC-9329-028_zoom1.jpg" alt="Camisa STYLENEST Premium">
+      <div class="thumbnails">
+        <img src="https://static.netshoes.com.br/produtos/camisa-nike-corinthians-ii-2024-25-torcedor-pro-masculina/28/2IC-9329-028/2IC-9329-028_zoom2.jpg" alt="Imagem 2">
+        <img src="https://static.netshoes.com.br/produtos/camisa-nike-corinthians-ii-2024-25-torcedor-pro-masculina/28/2IC-9329-028/2IC-9329-028_zoom3.jpg" alt="Imagem 3">
+      </div>
+    </div>
+
+    <!-- Detalhes -->
+    <div class="detalhes">
+      <h1>Camisa STYLENEST Premium</h1>
+      <p class="preco">R$ 199,90</p>
+
+      <div class="tamanhos">
+        <p>Escolha o tamanho:</p>
+        <div class="tamanhos-grid">
+          <button class="size-btn" data-size="P">P</button>
+          <button class="size-btn" data-size="M">M</button>
+          <button class="size-btn" data-size="G">G</button>
+          <button class="size-btn disabled" disabled data-size="GG">GG</button>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button id="btn-add-cart">Adicionar ao Carrinho</button>
+        <button id="btn-comprar-agora">Comprar Agora</button>
+      </div>
+
+      <section class="avaliacoes">
+        <h2>Avaliações</h2>
+        <div class="comentario">
+          ⭐⭐⭐⭐⭐ <br>
+          <p>Excelente qualidade, tecido leve e confortável.</p>
+        </div>
+        <div class="comentario">
+          ⭐⭐⭐⭐☆ <br>
+          <p>Gostei muito, mas achei o tamanho um pouco pequeno.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Troca da imagem principal
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+    const imgPrincipal = document.getElementById("imagem-principal");
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        imgPrincipal.src = thumb.src;
+      });
+    });
+
+    // Seleção de tamanho
+    const sizeButtons = document.querySelectorAll(".size-btn:not(.disabled)");
+    let tamanhoSelecionado = null;
+
+    sizeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sizeButtons.forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        tamanhoSelecionado = btn.dataset.size;
+      });
+    });
+
+    // Botões de ação
+    document.getElementById("btn-add-cart").addEventListener("click", () => {
+      if (!tamanhoSelecionado) return alert("Escolha um tamanho primeiro!");
+      alert(`Produto adicionado ao carrinho - Tamanho ${tamanhoSelecionado}`);
+      // aqui você pode salvar no localStorage igual ao carrinho.js
+    });
+
+    document.getElementById("btn-comprar-agora").addEventListener("click", () => {
+      if (!tamanhoSelecionado) return alert("Escolha um tamanho primeiro!");
+      alert(`Compra imediata - Tamanho ${tamanhoSelecionado}`);
+      window.location.href = "checkout.html";
+    });
+
+    document.getElementById("btn-add-cart").addEventListener("click", () => {
+  if (!tamanhoSelecionado) return alert("Escolha um tamanho primeiro!");
+  alert(`Produto adicionado ao carrinho - Tamanho ${tamanhoSelecionado}`);
+});
+
+  </script>
+</body>
+</html>

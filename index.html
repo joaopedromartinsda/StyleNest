@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STYLENEST</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <header class="main-header">
+  <div class="logo">STYLENEST</div>
+  <nav class="nav-links">
+    <a href="mulher.html">Mulher</a>
+    <a href="homem.html">Homem</a>
+    <a href="kids.html">Kids</a>
+  </nav>
+  <div class="actions">
+    <a href="#" id="btn-login" class="auth-btn">Login</a>
+    <a href="#" id="btn-register" class="auth-btn">Cadastro</a>
+    <div class="cart-icon">
+      🛒 <span class="cart-count">0</span>
+    </div>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <div class="hero-text" style="text-align: center; margin: 40px 0;">
+    <h2>Escolha seu estilo</h2>
+    <p>Confira as últimas tendências</p>
+  </div>
+
+  <!-- CATEGORIAS -->
+  <main class="categories">
+    <a href="mulher.html" class="category">
+      <img src="https://odefensor.com.br/wp-content/uploads/2025/02/Tendencias-de-moda-feminina-para-2025-conforto-e-estilo-em-cada-detalhe-2.png" alt="Moda Feminina" />
+      <h3>MODA FEMININA</h3>
+    </a>
+
+    <a href="homem.html" class="category">
+      <img src="https://lojamakenji.vteximg.com.br/arquivos/ids/192891-450-550/173425026_01.png?v=638818132624270000" alt="Moda Masculina" />
+      <h3>MODA MASCULINA</h3>
+    </a>
+
+    <a href="kids.html" class="category">
+      <img src="https://img.freepik.com/fotos-premium/moda-menino-e-menina-em-roupas-elegantes-na-parede-colorida-roupas-brilhantes-de-outono-em-criancas-uma-crianca-posando-em-uma-parede-rosa-roxa-colorida_86390-4442.jpg" alt="Moda Kids" />
+      <h3>KIDS</h3>
+    </a>
+  </main>
+
+  <!-- Modal de Login -->
+<div id="modal-login" class="modal">
+  <div class="modal-content">
+    <h2>Login</h2>
+    <form id="form-login">
+      <label for="login-email">E-mail</label>
+      <input type="email" id="login-email" required>
+
+      <label for="login-senha">Senha</label>
+      <input type="password" id="login-senha" required>
+
+      <button type="submit">Entrar</button>
+      <button type="button" class="btn-fechar">Fechar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="modal-register" class="modal">
+  <div class="modal-content">
+    <h2>Cadastro</h2>
+    <form id="form-register">
+      <label for="register-nome">Nome</label>
+      <input type="text" id="register-nome" required>
+
+      <label for="register-email">E-mail</label>
+      <input type="email" id="register-email" required>
+
+      <label for="register-senha">Senha</label>
+      <input type="password" id="register-senha" required>
+
+      <label for="register-confirmar">Confirmar Senha</label>
+      <input type="password" id="register-confirmar" required>
+
+      <button type="submit">Cadastrar</button>
+      <button type="button" class="btn-fechar">Fechar</button>
+    </form>
+  </div>
+</div>
+
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
